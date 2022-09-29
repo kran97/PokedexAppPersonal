@@ -1,0 +1,32 @@
+.pokemonImage {
+    width: 90px;
+    height: 90px;
+}
+
+@media screen and (min-width: 480px) {
+    .pokemonImage {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.pokemonName {
+    margin: 0;
+}
+
+.pokemonId {
+    margin: 0;
+}
+
+.cardMainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.cardDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

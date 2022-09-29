@@ -1,0 +1,35 @@
+.header {
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    color: #2E3156;
+    border-bottom: 1px solid #5D5F7E;
+    padding-bottom: 10px;
+}
+.subTitle {
+    color: #5D5F7E;
+    margin: 0 0 20px 0;
+}
+
+@media screen and (min-width: 480px) {
+    .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        margin-left: 20px;
+    }
+    .title {
+        color: #2E3156;
+        border-right: 1px solid #5D5F7E;
+        border-bottom: 0;
+        padding-right: 4vw;
+        padding-bottom: 0;
+    }
+    .subTitle {
+        color: #5D5F7E;
+        padding-left: 4vw;
+        margin: 0;
+    }
+}

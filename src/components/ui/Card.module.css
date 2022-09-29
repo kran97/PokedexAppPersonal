@@ -1,0 +1,19 @@
+.card {
+    background-color: white;
+    border: 1.5px dashed grey;
+    border-radius: 6px;
+    width: 125px;
+    height: 180px;
+    padding: 10px;
+}
+
+@media screen and (min-width: 480px) {
+    .card {
+        background-color: white;
+        border: 1.5px dashed grey;
+        border-radius: 6px;
+        width: 180px;
+        height: 220px;
+        padding: 10px;
+    }
+}

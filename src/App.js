@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { loadPokemons } from "./service/service-helper";
+import { useState, useEffect } from "react";
+import Pokemon from "./components/Pokemon";
+import Header from "./components/Header";
 
 function App() {
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadedPokemons, setLoadedPokemons] = useState([]);
+
+  const BASE_URL = "https://pokeapi.co/api/v2/pokemon";
+  useEffect(() => {
+    setIsLoading(true);
+    loadPokemons(BASE_URL).then((res) => {
+      setLoadedPokemons(res);
+      setIsLoading(false);
+    });
+  }, []);
+
+  if (isLoading) {
+    return (
+      <section>
+        <p>Loading...</p>
+      </section>
+    );
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Header />
+      <div className="container">
+        {
+          loadedPokemons.map((pokemon, index) => {
+            return <Pokemon pokemonData={pokemon} key={index} />;
+          })
+        }
+      </div>
+    </main>
   );
 }
 

@@ -1,0 +1,15 @@
+.pokemonImage {
+    width: 90px;
+    height: 90px;
+}
+
+@media screen and (min-width: 480px) {
+    .pokemonImage {
+        width: 120px;
+        height: 120px;
+        display: block;
+        position: relative;
+        top: 30px;
+        left: 20px;
+    }
+}
